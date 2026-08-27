@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogo {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalogo img {
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.produto-box {
+    margin: 20px 0;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 5px;
+}
+
+video {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
