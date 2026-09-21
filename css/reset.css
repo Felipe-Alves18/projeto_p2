@@ -1,0 +1,12 @@
+/* border-box: padding e border passam a contar dentro da largura declarada */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove a margem e o padding padrão do navegador no body */
+body {
+    margin: 0;
+    padding: 0;
+}

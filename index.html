@@ -11,15 +11,13 @@
 
     <div class="catalogo">
 
-        <!-- header: logo, título principal (só um h1) e selo -->
         <header>
             <img src="assets/images/logo.jpg.jpeg" alt="Logo da loja" width="100">
 
-            <h1>Catálogo de Produtos - Loja Online</h1>
+            <h1 id="titulo-principal">Catálogo de Produtos - Loja Online</h1>
 
-            <div class="produto-header" style="display: flex; justify-content: center; margin: 15px 0;">
-                <svg viewBox="0 0 130 46" width="120" height="42" role="img" aria-labelledby="tituloSeloPromo"
-                     style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            <div class="produto-header">
+                <svg viewBox="0 0 130 46" width="120" height="42" role="img" aria-labelledby="tituloSeloPromo">
                     <title id="tituloSeloPromo">Selo: Em Promoção</title>
                     <rect x="2" y="2" width="126" height="42" rx="8" fill="#1F3D2B" stroke="#C9A24B" stroke-width="1.5" />
                     <text x="65" y="28" font-size="14" font-family="Georgia, serif" letter-spacing="1"
@@ -28,80 +26,76 @@
             </div>
         </header>
 
-        <!-- main: só um por página; cada assunto em uma section com h2 -->
         <main>
 
-            <section class="produto-box" aria-labelledby="titulo-produto">
-                <h2 id="titulo-produto">Produto em Destaque</h2>
+            <section class="card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card produto-box">
+                <h2>Produto em Destaque</h2>
+                <ul>
+    <li>Tamanhos: P, M, G e GG</li>
+    <li>Preços de R$ 44,90 a R$ 54,90</li>
+    <li>Camisa Básica Premium</li>
+</ul>
+
+<p><a href="https://pt.wikipedia.org/wiki/Camiseta" target="_blank" rel="noopener noreferrer">Saiba mais sobre camisetas</a></p>
 
                 <table>
-                    <caption>Preço do produto</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Produto</th>
-                            <th scope="col">Preço</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Camisa Básica Premium</td>
-                            <td>R$ 49,90</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                    </tr>
+                    <tr>
+                        <td>Camisa Básica Premium</td>
+                        <td class="destaque">R$ 49,90</td>
+                    </tr>
                 </table>
             </section>
 
-            <section class="video-box" aria-labelledby="titulo-video">
-                <h2 id="titulo-video">Apresentação do Produto</h2>
+            <section class="card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card video-box">
+                <h2>Apresentação do Produto</h2>
                 <!-- preload="metadata": carrega só a duração; o vídeo é curto e fica abaixo da dobra -->
-<video width="320" height="240" controls preload="metadata"
-       poster="assets/images/poster-camisas.png">
-    <!-- MP4 primeiro (mais compatível); WebM como plano B -->
-    <source src="assets/videos/vd_camisas3.mp4" type="video/mp4">
-    <source src="assets/videos/vd_camisas3.webm" type="video/webm">
-    Seu navegador não suporta a tag de vídeo ou o arquivo não foi encontrado.
-</video>
-            <section class="grafico-box" aria-labelledby="titulo-grafico">
-                <h2 id="titulo-grafico">Preço por Variação</h2>
+                <video width="320" height="240" controls preload="metadata"
+                       poster="assets/images/poster-camisas.png">
+                    <!-- MP4 primeiro (mais compatível); WebM como plano B -->
+                    <source src="assets/videos/vd_camisas3.mp4" type="video/mp4">
+                    <source src="assets/videos/vd_camisas3.webm" type="video/webm">
+                    Seu navegador não suporta a tag de vídeo ou o arquivo não foi encontrado.
+                </video>
+            </section>
+
+            <section class="card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card grafico-box">
+                <h2>Preço por Variação</h2>
                 <canvas id="grafico-precos" width="320" height="200"
                     role="img" aria-label="Gráfico de preço por variação: P R$ 44,90, M R$ 49,90, G R$ 49,90, GG R$ 54,90">
                     <p>Preços por variação: P R$ 44,90, M R$ 49,90, G R$ 49,90, GG R$ 54,90.</p>
                 </canvas>
             </section>
 
-            <!-- formulário de avaliação (Aula 3) -->
-            <section class="avaliacao-box" aria-labelledby="titulo-avaliacao">
-                <h2 id="titulo-avaliacao">Avalie o Produto</h2>
+            <section class="card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card card avaliacao-box">
+                <h2>Avalie o Produto</h2>
 
                 <form id="form-avaliacao">
 
                     <fieldset>
                         <legend>Seus dados</legend>
 
-                        <!-- for do label = id do input -->
-                        <!-- required + pattern (só letras e espaços) -->
+                        <!-- o for do label é igual ao id do input -->
                         <p>
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" required
-                                   pattern="[A-Za-zÀ-ÿ ]{2,60}"
-                                   title="Use de 2 a 60 letras, sem números"
-                                   autocomplete="name">
+                            <input type="text" id="nome" name="nome" required>
                         </p>
 
-                        <!-- type="email" valida o formato sozinho -->
                         <p>
                             <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" required autocomplete="email">
+                            <input type="email" id="email" name="email" required>
                         </p>
                     </fieldset>
 
                     <fieldset>
                         <legend>Sua avaliação</legend>
 
-                        <!-- min e max limitam a nota de 1 a 5 -->
                         <p>
                             <label for="nota">Nota (1 a 5):</label>
-                            <input type="number" id="nota" name="nota" min="1" max="5" step="1" required>
+                            <input type="number" id="nota" name="nota" min="1" max="5" required>
                         </p>
 
                         <p>
@@ -123,17 +117,9 @@
                             <input type="radio" id="recomenda-nao" name="recomenda" value="nao">
                             <label for="recomenda-nao">Não</label>
                         </fieldset>
-
-                        <p>
-                            <label for="comentario">Comentário (opcional):</label>
-                            <textarea id="comentario" name="comentario" rows="4" maxlength="300"></textarea>
-                        </p>
                     </fieldset>
 
-                    <!-- button, não div: o navegador bloqueia o envio se faltar campo obrigatório -->
-                    <button type="submit">Enviar avaliação</button>
-
-                    <p id="mensagem-form" role="status"></p>
+                    <button type="submit" class="botao">Enviar avaliação</button>
                 </form>
             </section>
 
@@ -146,7 +132,7 @@
     </div>
 
     <script>
-    // Gráfico em Canvas (Aula 5)
+    // Gráfico de barras em Canvas (Aula 5)
     const canvasPrecos = document.getElementById('grafico-precos');
     const ctxPrecos = canvasPrecos.getContext('2d');
 
@@ -161,6 +147,7 @@
     let progresso = 0; // 0 a 1: controla a animação
 
     function desenharGraficoPrecos() {
+        // clearRect limpa o quadro anterior (evita o rastro do Erro 2)
         ctxPrecos.clearRect(0, 0, canvasPrecos.width, canvasPrecos.height);
 
         ctxPrecos.fillStyle = '#FFFFFF';
@@ -208,7 +195,7 @@
             x += larguraBarra + espaco;
         });
     }
-
+    
     function animarGraficoPrecos() {
         progresso += 0.03;
         if (progresso > 1) progresso = 1;
@@ -219,16 +206,6 @@
     }
 
     animarGraficoPrecos();
-
-    // Formulário: o submit só dispara se os campos obrigatórios estiverem válidos
-    const formAvaliacao = document.getElementById('form-avaliacao');
-    const mensagemForm = document.getElementById('mensagem-form');
-
-    formAvaliacao.addEventListener('submit', function (evento) {
-        evento.preventDefault();
-        mensagemForm.textContent = 'Obrigado pela sua avaliação!';
-        formAvaliacao.reset();
-    });
     </script>
 </body>
 </html>
