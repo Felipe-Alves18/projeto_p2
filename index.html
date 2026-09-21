@@ -53,12 +53,14 @@
 
             <section class="video-box" aria-labelledby="titulo-video">
                 <h2 id="titulo-video">Apresentação do Produto</h2>
-                <video width="320" height="240" controls preload="auto">
-                    <source src="assets/videos/vd_camisas3.mp4" type="video/mp4">
-                    Seu navegador não suporta a tag de vídeo ou o arquivo não foi encontrado.
-                </video>
-            </section>
-
+                <!-- preload="metadata": carrega só a duração; o vídeo é curto e fica abaixo da dobra -->
+<video width="320" height="240" controls preload="metadata"
+       poster="assets/images/poster-camisas.png">
+    <!-- MP4 primeiro (mais compatível); WebM como plano B -->
+    <source src="assets/videos/vd_camisas3.mp4" type="video/mp4">
+    <source src="assets/videos/vd_camisas3.webm" type="video/webm">
+    Seu navegador não suporta a tag de vídeo ou o arquivo não foi encontrado.
+</video>
             <section class="grafico-box" aria-labelledby="titulo-grafico">
                 <h2 id="titulo-grafico">Preço por Variação</h2>
                 <canvas id="grafico-precos" width="320" height="200"
