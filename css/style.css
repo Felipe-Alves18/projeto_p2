@@ -1,21 +1,29 @@
+/* font-size sempre em rem: acompanha o tamanho de fonte configurado no navegador,
+   o que ajuda quem precisa de texto maior (px ignora essa configuração) */
+
+:root {
+    --cor-fundo: #f4f4f4;
+    --cor-card: #ffffff;
+    --cor-destaque: #1f3d2b;
+    --cor-preco: #29844f;
+    --espaco: 30px;
+    --raio: 8px;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--cor-fundo);
 }
 
 .catalogo {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
+    background: var(--cor-card);
+    padding: var(--espaco);
+    border-radius: var(--raio);
     text-align: center;
     max-width: 400px;
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    box-shadow: var(--sombra);
 }
 
 .catalogo img {
@@ -23,19 +31,83 @@ body {
     margin: 0 auto 15px auto;
 }
 
-.produto-box {
-    margin: 20px 0;
-}
-
-.preco {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #29844f;
-    margin-top: 5px;
-}
-
 video {
     max-width: 100%;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.produto-header {
+    margin: 15px 0;
+}
+
+.card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    border-radius: var(--raio);
+}
+
+/* combinador filho direto (>): estiliza só o h2 que é filho do card, sem afetar outros h2 */
+.card > h2 {
+    font-size: 1.25rem;
+    color: var(--cor-destaque);
+}
+
+.destaque {
+    color: var(--cor-preco);
+    font-weight: bold;
+}
+
+.botao {
+    background-color: var(--cor-destaque);
+    color: var(--cor-card);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--raio);
+}
+
+#titulo-principal {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+}
+
+/* Links: ordem LoVe/HAte (link, visited, hover, active), senão um estado anula o outro */
+a:link {
+    color: var(--cor-preco);
+}
+
+a:visited {
+    color: #6b4f2a;
+}
+
+a:hover {
+    color: var(--cor-destaque);
+    text-decoration: underline;
+}
+
+a:active {
+    color: #c9a24b;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* agrupamento (,): mesmo estilo para th e td */
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--cor-destaque);
+    color: var(--cor-card);
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+    text-align: left;
 }
